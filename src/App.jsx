@@ -1,22 +1,18 @@
 import { useState, useEffect } from 'react'
-import { Moon, Sun, Menu, X, Github, Mail, Book, Search as SearchIcon } from 'lucide-react'
+import { Moon, Sun, Menu, X, Github, Mail, Search as SearchIcon } from 'lucide-react'
 import Sidebar from './components/Sidebar'
 import Content from './components/Content'
 import SearchBar from './components/SearchBar'
+import Footer from './components/Footer'
 import './App.css'
 
 // Import all documentation
 import pengenalanMd from './docs/pengenalan.md?raw'
 import instalasiMd from './docs/instalasi.md?raw'
-import installationMd from './docs/installation.md?raw'
 import sintaksDasarMd from './docs/sintaks-dasar.md?raw'
-import syntaxBasicsMd from './docs/syntax-basics.md?raw'
 import fungsiBuiltinMd from './docs/fungsi-builtin.md?raw'
-import builtinFunctionsMd from './docs/builtin-functions.md?raw'
 import fiturLanjutanMd from './docs/fitur-lanjutan.md?raw'
-import advancedFeaturesMd from './docs/advanced-features.md?raw'
 import contohMd from './docs/contoh.md?raw'
-import examplesMd from './docs/examples.md?raw'
 import httpClientGuideMd from './docs/http-client-guide.md?raw'
 import jitCompilerMd from './docs/jit-compiler.md?raw'
 import pythonIntegrationMd from './docs/python-integration.md?raw'
@@ -39,19 +35,12 @@ const docs = {
     category: 'Getting Started',
     order: 2
   },
-  'installation': { 
-    title: 'Installation (EN)', 
-    content: installationMd, 
-    icon: '📦',
-    category: 'Getting Started',
-    order: 3
-  },
   'quick-reference': { 
     title: 'Quick Reference', 
     content: quickReferenceMd, 
     icon: '⚡',
     category: 'Getting Started',
-    order: 4
+    order: 3
   },
 
   // Core Documentation
@@ -62,33 +51,19 @@ const docs = {
     category: 'Core Documentation',
     order: 1
   },
-  'syntax-basics': { 
-    title: 'Syntax Basics (EN)', 
-    content: syntaxBasicsMd, 
-    icon: '📝',
-    category: 'Core Documentation',
-    order: 2
-  },
   'fungsi-builtin': { 
     title: 'Fungsi Built-in', 
     content: fungsiBuiltinMd, 
     icon: '🔧',
     category: 'Core Documentation',
-    order: 3
-  },
-  'builtin-functions': { 
-    title: 'Built-in Functions (EN)', 
-    content: builtinFunctionsMd, 
-    icon: '🔧',
-    category: 'Core Documentation',
-    order: 4
+    order: 2
   },
   'type-system': { 
     title: 'Type System', 
     content: typeSystemMd, 
     icon: '🏷️',
     category: 'Core Documentation',
-    order: 5
+    order: 3
   },
 
   // Advanced Features
@@ -99,36 +74,29 @@ const docs = {
     category: 'Advanced Features',
     order: 1
   },
-  'advanced-features': { 
-    title: 'Advanced Features (EN)', 
-    content: advancedFeaturesMd, 
-    icon: '🚀',
-    category: 'Advanced Features',
-    order: 2
-  },
   'http-client-guide': { 
     title: 'HTTP Client Guide', 
     content: httpClientGuideMd, 
     icon: '🌐',
     category: 'Advanced Features',
-    order: 3
+    order: 2
   },
   'jit-compiler': { 
     title: 'JIT Compiler', 
     content: jitCompilerMd, 
     icon: '⚡',
     category: 'Advanced Features',
-    order: 4
+    order: 3
   },
   'python-integration': { 
     title: 'Python Integration', 
     content: pythonIntegrationMd, 
     icon: '🐍',
     category: 'Advanced Features',
-    order: 5
+    order: 4
   },
 
-  // Examples
+  // Examples - Redirect to GitHub
   'contoh': { 
     title: 'Contoh Program', 
     content: contohMd, 
@@ -136,29 +104,22 @@ const docs = {
     category: 'Examples & Tutorials',
     order: 1
   },
-  'examples': { 
-    title: 'Code Examples (EN)', 
-    content: examplesMd, 
-    icon: '📚',
-    category: 'Examples & Tutorials',
-    order: 2
-  },
 }
 
 // Group docs by category
 const groupedDocs = Object.entries(docs).reduce((acc, [id, doc]) => {
-  const category = doc.category || 'Other';
+  const category = doc.category || 'Other'
   if (!acc[category]) {
-    acc[category] = [];
+    acc[category] = []
   }
-  acc[category].push({ id, ...doc });
-  return acc;
-}, {});
+  acc[category].push({ id, ...doc })
+  return acc
+}, {})
 
 // Sort each category by order
 Object.keys(groupedDocs).forEach(category => {
-  groupedDocs[category].sort((a, b) => a.order - b.order);
-});
+  groupedDocs[category].sort((a, b) => a.order - b.order)
+})
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -270,7 +231,7 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <div className="pt-16 flex">
+      <div className="pt-16 flex min-h-[calc(100vh-4rem)]">
         {/* Sidebar */}
         <Sidebar
           groupedDocs={groupedDocs}
@@ -286,50 +247,8 @@ function App() {
         </main>
       </div>
 
-      {/* Footer */}
-      <footer className="lg:ml-64 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-3">
-              <img src="/icon.png" alt="RenzmcLang" className="h-8 w-8" />
-              <div className="text-sm text-gray-600 dark:text-gray-400">
-                <p className="font-semibold">RenzmcLang</p>
-                <p>Bahasa Pemrograman Berbasis Bahasa Indonesia</p>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-6 text-sm text-gray-600 dark:text-gray-400">
-              <a
-                href="https://github.com/RenzMc/RenzmcLang"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://pypi.org/project/renzmc/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-              >
-                PyPI
-              </a>
-              <a
-                href="mailto:renzaja11@gmail.com"
-                className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-              >
-                Contact
-              </a>
-            </div>
-          </div>
-          
-          <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700 text-center text-sm text-gray-600 dark:text-gray-400">
-            <p>Made with ❤️ for Indonesian developers</p>
-            <p className="mt-1">&copy; 2025 RenzMc. MIT License.</p>
-          </div>
-        </div>
-      </footer>
+      {/* Footer - Full Width seperti Header */}
+      <Footer />
     </div>
   )
 }

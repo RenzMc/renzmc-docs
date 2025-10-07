@@ -101,6 +101,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Improved transitions and animations */
+@layer utilities {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-200 ease-in-out hover:-translate-y-0.5;
+  }
+}
+
 /* Code block styling */
 .code-block {
   @apply relative;
