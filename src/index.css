@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .prose-custom {
+    @apply prose prose-slate dark:prose-invert max-w-none;
+  }
+  
+  .prose-custom h1 {
+    @apply text-4xl font-bold mb-6 text-gray-900 dark:text-white;
+  }
+  
+  .prose-custom h2 {
+    @apply text-3xl font-bold mt-12 mb-4 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2;
+  }
+  
+  .prose-custom h3 {
+    @apply text-2xl font-semibold mt-8 mb-3 text-gray-800 dark:text-gray-100;
+  }
+  
+  .prose-custom h4 {
+    @apply text-xl font-semibold mt-6 mb-2 text-gray-800 dark:text-gray-100;
+  }
+  
+  .prose-custom p {
+    @apply mb-4 leading-relaxed text-gray-700 dark:text-gray-300;
+  }
+  
+  .prose-custom ul {
+    @apply list-disc list-inside mb-4 space-y-2;
+  }
+  
+  .prose-custom ol {
+    @apply list-decimal list-inside mb-4 space-y-2;
+  }
+  
+  .prose-custom li {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+  
+  .prose-custom code {
+    @apply bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm font-mono text-primary-600 dark:text-primary-400;
+  }
+  
+  .prose-custom pre {
+    @apply bg-gray-50 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto mb-4 border border-gray-200 dark:border-gray-700;
+  }
+  
+  .prose-custom pre code {
+    @apply bg-transparent p-0 text-sm;
+  }
+  
+  .prose-custom a {
+    @apply text-primary-600 dark:text-primary-400 hover:underline;
+  }
+  
+  .prose-custom blockquote {
+    @apply border-l-4 border-primary-500 pl-4 italic text-gray-700 dark:text-gray-300 my-4;
+  }
+  
+  .prose-custom table {
+    @apply w-full border-collapse mb-4;
+  }
+  
+  .prose-custom th {
+    @apply bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 px-4 py-2 text-left font-semibold;
+  }
+  
+  .prose-custom td {
+    @apply border border-gray-300 dark:border-gray-600 px-4 py-2;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-500;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Code block styling */
+.code-block {
+  @apply relative;
+}
+
+.code-block pre {
+  @apply !bg-gray-900 dark:!bg-gray-950;
+}
