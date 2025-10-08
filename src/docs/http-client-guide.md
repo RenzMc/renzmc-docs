@@ -632,15 +632,6 @@ response itu http_get(url + "?action=delete")  // Use DELETE instead
 
 ---
 
-## 📚 See Also
-
-- [Quick Reference](quick-reference.md) - Quick syntax reference
-- [Built-in Functions](builtin-functions.md) - All built-in functions
-- [Examples](examples.md) - Code examples
-- [Python Integration](python-integration.md) - Python integration
-
----
-
 ## 🎓 Learning Path
 
 ### Beginner
