@@ -556,15 +556,6 @@ tampilkan help_text
 
 ---
 
-## 📚 See Also
-
-- [Syntax Basics](syntax-basics.md) - Basic syntax
-- [Built-in Functions](builtin-functions.md) - Built-in functions
-- [Advanced Features](advanced-features.md) - Advanced features
-- [Examples](examples.md) - Code examples
-
----
-
 ## 🔗 Useful Python Libraries
 
 ### Data Science
