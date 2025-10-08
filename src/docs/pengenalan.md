@@ -109,14 +109,6 @@ jika response.ok()
 selesai
 ```
 
-## 📚 Apa Selanjutnya?
-
-1. **[Instalasi](instalasi)** - Panduan instalasi lengkap
-2. **[Sintaks Dasar](sintaks-dasar)** - Pelajari sintaks fundamental
-3. **[Fungsi Built-in](fungsi-builtin)** - Eksplorasi 184+ fungsi bawaan
-4. **[Fitur Lanjutan](fitur-lanjutan)** - OOP, Async, dan fitur advanced
-5. **[Contoh Program](contoh)** - 99+ contoh program siap pakai
-
 ## 💡 Tips Belajar
 
 1. **Mulai dari Dasar** - Pahami variabel, tipe data, dan control flow
